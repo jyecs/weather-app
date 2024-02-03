@@ -3,9 +3,19 @@ import { getWeatherData } from "./weather";
 
 async function buildDivs() {
   const data = await getWeatherData();
-  for (let i = 0; i < 7; i++) {
-    console.log(data[i]);
-  }
+  Object.entries(data).forEach((day) => {
+    console.log(day);
+    createDay(day);
+  });
+}
+
+function createDay(day) {
+  const dayData = day[1].day;
+  const maxTempF = document.createElement("div");
+  const minTempF = document.createElement("div");
+  const dayImage = document.createElement("img");
+
+  
 }
 
 buildDivs();
