@@ -1,3 +1,43 @@
-.container {
-    background-color: red;
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    margin-bottom: 0px;
+}
+
+.content {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-display {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    padding: 0px 100px 20px 100px;
+    place-content: center;
+    grid-template-rows: 1fr 5fr 1fr;
+    gap: 10px;
+}
+
+.weather-day-container {
+    display: flex;
+    grid-row-start: 2;
+    flex-direction: column;
+}
+
+.weather-day-container > img {
+    height: 100px;
+    width: 100px;
+    justify-self: center;
+    align-self: center;
+
+}
+
+.weather-day-container > div {
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
 }
