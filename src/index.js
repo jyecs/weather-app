@@ -1,11 +1,6 @@
 import { getWeatherData } from "./weather";
 
-async function buildDivs() {
-  const data = await getWeatherData();
-  Object.entries(data).forEach((day) => {
-    body.appendChild(createDay(day));
-  });
-}
+const body = document.querySelector("body");
 
 function createDay(day) {
   const container = document.createElement("div");
@@ -16,15 +11,22 @@ function createDay(day) {
 
   maxTempF.innerHTML = dayData.maxtemp_f;
   minTempF.innerHTML = dayData.mintemp_f;
-  dayImage.src = dayData.condition.icon.substring(2);
+  const imageUrl = dayData.condition.icon.substring(2);
 
+  dayImage.src = `https://${imageUrl}`;
   container.appendChild(maxTempF);
   container.appendChild(minTempF);
   container.appendChild(dayImage);
   return container;
-
 }
 
-const body = document.querySelector("body");
+async function buildDivs() {
+  const data = await getWeatherData();
+  Object.entries(data).forEach((day) => {
+    const div = createDay(day);
+    body.appendChild(div);
+  });
+}
+
 console.log(body);
 buildDivs();
