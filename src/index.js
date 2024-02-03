@@ -28,7 +28,7 @@ function capitalizeFirst(string) {
   return str;
 }
 
-async function buildDivs(place = "London") {
+async function buildDivs(place = "Seattle") {
   weatherDiv.replaceChildren();
   const placeTitle = document.querySelector(".weather-place");
   placeTitle.innerHTML = capitalizeFirst(place);
