@@ -1,0 +1,1 @@
+(()=>{"use strict";!async function(){const a=await async function(){const a=await fetch("http://api.weatherapi.com/v1/forecast.json?key=ffbe3dc4ce984a67a8333912240302&q=london&days=7",{mode:"cors"});return(await a.json()).forecast.forecastday}();for(let o=0;o<7;o++)console.log(a[o])}()})();

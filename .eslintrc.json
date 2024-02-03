@@ -10,5 +10,8 @@
     },
     "rules": {
         "quotes": [2, "double", {"avoidEscape": true}],
+        "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+        "allowForLoopAfterthoughts": true
+        
     }
 }
