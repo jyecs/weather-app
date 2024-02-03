@@ -22,7 +22,6 @@ function createDay(day) {
 }
 
 function capitalizeFirst(string) {
-  console.log(string);
   let str = string.substring(0, 1).toUpperCase();
   str += string.substring(1);
   return str;
@@ -41,7 +40,6 @@ async function buildDivs(place = "Seattle") {
 
 const button = document.querySelector("#submit-button");
 button.addEventListener("click", () => {
-  console.log(document.querySelector("#place"));
   const { value } = document.querySelector("#place");
   buildDivs(value);
 });
